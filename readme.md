@@ -15,3 +15,8 @@
 - Servlet Stack 原来的
 - Reactive Stack 响应式的开发 => 不是很懂
 ### SpringBoot有点：看官网，直接抄 ，作为技术栈介绍
+### SpringBoo + SpringCloud
+- Cloud Native 云原生： 原生应用如何在云上部署 （尚硅谷的大厂学院： 全面拥抱云原生： Docker，Kubernets, DevOps, CI/CD, Service Mesh与Serverless）
+> 解决的问题： 弹性伸缩，流量治理，负载均衡，灰度发布，自动化部署等
+
+### 深入学的话还是看官方文档，刚开始文档比较难以理解，可以想通过看视频。有个大致了解之后，还是得回到文档。
