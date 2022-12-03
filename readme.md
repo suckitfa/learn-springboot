@@ -2,6 +2,7 @@
 - IOC
 - AOP
 - MVC
+- 注解与合成组件，注解的写法
 
 ### 应用场景 （详见spring.io）
 - Serverless
@@ -26,7 +27,30 @@
 ```xml
 
 ```
+### 依赖管理 pom.xml （具体查看语雀文档）
+- 注意版本号是否兼容，查看项目中的依赖，有的依赖，在项目中是有默认版本，以及 maven网站中支持的版本号。
 
+### 自动配置项 （查看语雀的文档）
+- SpringBoot默认配置好了所有的web开发场景
+- 自动被扫描的文件路劲和主程序（启动程序，在本项目中为 /main/com/example/demo/DemoApplication.java）同级
+> 也就是说主程序所在的包能够自动被扫描到，我们的业务代码放在跟主程序同级别（文档中的经典的SpringBoot代码结构）。
+```java
+//自己可以改变扫描路径 这个是一个合成注解
+
+import org.springframework.boot.SpringBootConfiguration;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.*;
+
+@SpringBootApplication
+// 等同于
+@SpringBootConfiguration
+@EnableAutoConfiguration
+@ComponentScan
+```
+- 默认配置，我们自定义的配置 application.properties (有哪些配置项，自己查看文档，从cache到security)
+- 自动配置 SpringBoot-web-starter 从开始, 哪些被引入，才会生效，是按需加载的。
+
+### 容器组件
 ### 资料
 - https://www.yuque.com/atguigu/springboot/lcfeme
 - https://www.bilibili.com/video/BV19K4y1L7MT
