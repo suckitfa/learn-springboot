@@ -20,3 +20,13 @@
 > 解决的问题： 弹性伸缩，流量治理，负载均衡，灰度发布，自动化部署等
 
 ### 深入学的话还是看官方文档，刚开始文档比较难以理解，可以想通过看视频。有个大致了解之后，还是得回到文档。
+
+##  Hello World案例
+### 配置Maven使用阿里云的镜像能够加快依赖项的下载速度
+```xml
+
+```
+
+### 资料
+- https://www.yuque.com/atguigu/springboot/lcfeme
+- https://www.bilibili.com/video/BV19K4y1L7MT
