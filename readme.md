@@ -50,7 +50,75 @@ import org.springframework.context.annotation.*;
 - 默认配置，我们自定义的配置 application.properties (有哪些配置项，自己查看文档，从cache到security)
 - 自动配置 SpringBoot-web-starter 从开始, 哪些被引入，才会生效，是按需加载的。
 
-### 容器组件
+### 容器组件概念解析
+- Bean: 
+```java
+
+```
+### SpringBooty的组价实践
+1. 引入场景依赖 官网的starter
+2. 查看自动配置了哪些
+    ```sh
+    #在 application.properties中配置
+    debug=true
+    # 控制行中会输出哪些生效了哪些不生效 negative
+    ```
+### LomBok 简化JavaBean的开发
+- 加入pom.xml 加入依赖
+- 安装创建lombok
+   ```java
+  package com.example.demo.bean;
+  import lombok.AllArgsConstructor;
+  import lombok.Data;
+  import lombok.NoArgsConstructor;
+  import lombok.ToString;
+  import org.springframework.boot.context.properties.ConfigurationProperties;
+  import org.springframework.stereotype.Component;
+  
+  @NoArgsConstructor // 无参构造器
+  @AllArgsConstructor // 全参构造器
+  @ToString // 序列化
+  @Data // lombok简化Java Bean的开发 getters&setters
+  @Component
+  @ConfigurationProperties(prefix = "mycar")
+  public class Car {
+    private String brand;
+    private Integer price;
+  }
+
+  ```
+  
+### 使用lombok
+```java
+package com.example.demo.controller;
+
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import com.example.demo.bean.Car;
+
+//这个注解可以使用 log.info
+@Slf4j
+@RestController
+public class HelloController {
+
+    //这个Autowired是个啥
+    @Autowired
+    Car car;
+    @RequestMapping("/hello")
+    public String index(@RequestParam("name") String name) {
+        log.info("request coming!");
+        return "hello " + name;
+    }
+
+    @RequestMapping("/car")
+    public  Car car() {return car;}
+
+}
+
+```
 ### 资料
 - https://www.yuque.com/atguigu/springboot/lcfeme
 - https://www.bilibili.com/video/BV19K4y1L7MT
