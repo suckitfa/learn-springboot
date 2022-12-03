@@ -1,6 +1,6 @@
 package com.example.demo;
 
-import com.example.demo.web.HelloController;
+import com.example.demo.controller.HelloController;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
