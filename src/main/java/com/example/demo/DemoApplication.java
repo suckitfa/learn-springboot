@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.bean.Pet;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -18,6 +19,12 @@ public class DemoApplication {
 			System.out.println(name);
 		}
 		System.out.println(names.length);
+
+		// 从容器中获取组件
+		Pet alice = run.getBean("Alice",Pet.class);
+		Pet alice01 = run.getBean("Alice", Pet.class);
+		// 看下是否单实例的组件
+		System.out.println("组件 =  "+ (alice01 == alice));
 	}
 
 }
