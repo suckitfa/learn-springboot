@@ -119,6 +119,14 @@ public class HelloController {
 }
 
 ```
+### 增加开发者工具dev-tools， 支持Live+load热更新
+- command + F9 自动编译，这个插件可以重新加载文件
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-devtools</artifactId>
+</dependency>
+```
 ### 资料
 - https://www.yuque.com/atguigu/springboot/lcfeme
 - https://www.bilibili.com/video/BV19K4y1L7MT
