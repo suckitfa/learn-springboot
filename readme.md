@@ -127,6 +127,12 @@ public class HelloController {
     <artifactId>spring-boot-devtools</artifactId>
 </dependency>
 ```
+### spring-boot-initializer
+- Idea里包含了这个东西，可以自动化创建spring-boot应用
+### yaml配置文件格式写法
+> yaml适合作为中心的配置文件
+- 基础语法KV写法， 缩进(tab-idea自动配置，空格)标识层级关系，相同层级左对齐即可
+- 标识注释 '#'
 ### 资料
 - https://www.yuque.com/atguigu/springboot/lcfeme
 - https://www.bilibili.com/video/BV19K4y1L7MT

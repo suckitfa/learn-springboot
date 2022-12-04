@@ -25,6 +25,6 @@ public class MyConfig {
 
     @Bean("Alice") // 自动以容器名字叫做alice
     public Pet pet01() {
-        return new Pet("Alice");
+        return new Pet("Alice",13.11);
     }
 }
